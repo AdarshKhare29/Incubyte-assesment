@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { add } from "../hooks/useCalculator";
 const StringCalculator: React.FC = () => {
     const [input, setInput] = useState<string>("");
-    const [result, setResult] = useState<number | string>("");
+    const [result, setResult] = useState<number | null>(null);
     const [error, setError] = useState<string | null>(null);
 
     const handleCalculate = () => {
@@ -13,6 +13,8 @@ const StringCalculator: React.FC = () => {
             setError("");
         } catch (err: any) {
             setError(err.message);
+            setResult(null);
+
         }
     };
     ;
