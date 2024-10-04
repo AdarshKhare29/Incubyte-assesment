@@ -25,6 +25,7 @@ function add(numbers: string): number {
     }
 
     return numArray
+        .filter((n) => n <= 1000)
         .reduce((sum, n) => sum + n, 0);
 }
 

@@ -30,4 +30,8 @@ describe("String Calculator", () => {
             "negative numbers not allowed: -2, -4"
         );
     });
+    test("should ignore numbers greater than 1000", () => {
+        expect(add("2,1001")).toBe(2);
+        expect(add("1000,1001,1")).toBe(1001);
+    });
 });
