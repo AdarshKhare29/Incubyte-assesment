@@ -6,8 +6,9 @@ const StringCalculator: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
 
     const handleCalculate = () => {
+        const formattedInput = input.replaceAll("\\n", "\n");
         try {
-            const output = add(input);
+            const output = add(formattedInput);
             setResult(output);
             setError("");
         } catch (err: any) {
