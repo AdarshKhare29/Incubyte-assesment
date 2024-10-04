@@ -37,7 +37,7 @@ const StringCalculator: React.FC = () => {
             <button onClick={handleCalculate} style={styles.button}>
                 Calculate
             </button>
-            <p>Result: {result}</p>
+            {result !== null && <p>Result: {result}</p>}
             {error && <p style={{ color: 'red' }}>{error}</p>}
         </div>
     );

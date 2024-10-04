@@ -19,6 +19,10 @@ function add(numbers: string): number {
         return isNaN(parsedNum) ? 0 : parsedNum;
     });
 
+    const negatives = numArray.filter((n) => n < 0);
+    if (negatives.length > 0) {
+        throw new Error(`negative numbers not allowed: ${negatives.join(", ")}`);
+    }
 
     return numArray
         .reduce((sum, n) => sum + n, 0);
