@@ -30,7 +30,7 @@ const StringCalculator: React.FC = () => {
                         className="inputBox"
                         style={error ? { border: '1px solid red' } : {}}
                     />
-                    {input && <div className="crossIcon" onClick={() => setInput('')}><img src="/close.png" width={20} height={20} alt="clear" /></div>}
+                    {input && <div className="crossIcon" onClick={() => setInput('')}><img src="/images/close.png" width={20} height={20} alt="clear" /></div>}
                 </div>
                 <button className="calculateButton" onClick={handleCalculate}>Calculate</button>
                 {error && <p className="resultDisplay" style={{ color: 'red' }}>Error: {error}</p>}
