@@ -3,10 +3,20 @@ function add(numbers: string): number {
     let delimiters = /,|\n/; // Default delimiters: comma or newline
 
     if (numbers.startsWith("//")) {
-        const singleDelimiterMatch = numbers.match(/^\/\/(.)\n/);
-        if (singleDelimiterMatch) {
-            delimiters = new RegExp(singleDelimiterMatch[1], "g");
-            numbers = numbers.slice(4);
+        const delimiterMatch = numbers.match(/^\/\/(\[.*?\])+\n/);
+        if (delimiterMatch) {
+            const delimiterPart = delimiterMatch[0];
+            const customDelimiters = delimiterPart
+                .slice(2, -1)
+                .split("][");
+            delimiters = new RegExp(customDelimiters.join("|"), "g");
+            numbers = numbers.slice(delimiterPart.length);
+        } else {
+            const singleDelimiterMatch = numbers.match(/^\/\/(.)\n/);
+            if (singleDelimiterMatch) {
+                delimiters = new RegExp(singleDelimiterMatch[1], "g");
+                numbers = numbers.slice(4);
+            }
         }
     }
 
