@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Incubyte-assesment/static/css/main.f39ee759.css",
+    "main.css": "/Incubyte-assesment/static/css/main.03d89bd3.css",
     "main.js": "/Incubyte-assesment/static/js/main.73043f9f.js",
     "static/js/453.53551a78.chunk.js": "/Incubyte-assesment/static/js/453.53551a78.chunk.js",
     "index.html": "/Incubyte-assesment/index.html",
-    "main.f39ee759.css.map": "/Incubyte-assesment/static/css/main.f39ee759.css.map",
+    "main.03d89bd3.css.map": "/Incubyte-assesment/static/css/main.03d89bd3.css.map",
     "main.73043f9f.js.map": "/Incubyte-assesment/static/js/main.73043f9f.js.map",
     "453.53551a78.chunk.js.map": "/Incubyte-assesment/static/js/453.53551a78.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f39ee759.css",
+    "static/css/main.03d89bd3.css",
     "static/js/main.73043f9f.js"
   ]
 }
