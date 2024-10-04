@@ -1,0 +1,62 @@
+import React, { useState } from "react";
+import { add } from "../hooks/useCalculator";
+const StringCalculator: React.FC = () => {
+    const [input, setInput] = useState<string>("");
+    const [result, setResult] = useState<number | string>("");
+    const [error, setError] = useState<string | null>(null);
+
+    const handleCalculate = () => {
+        try {
+            const output = add(input);
+            setResult(output);
+            setError("");
+        } catch (err: any) {
+            setError(err.message);
+        }
+    };
+    ;
+
+    return (
+        <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            padding: '20px',
+        }}>
+            <h1>String Calculator</h1>
+            <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder='Enter numbers (e.g. "1", "2")'
+                style={styles.input}
+            />
+            <button onClick={handleCalculate} style={styles.button}>
+                Calculate
+            </button>
+            <p>Result: {result}</p>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+        </div>
+    );
+};
+
+const styles = {
+    container: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        padding: '20px',
+    },
+    input: {
+        padding: '10px',
+        fontSize: '16px',
+        marginBottom: '10px',
+    },
+    button: {
+        padding: '10px',
+        fontSize: '16px',
+        cursor: 'pointer',
+    },
+};
+
+export default StringCalculator;
