@@ -41,6 +41,11 @@
     transition: box-shadow 0.3s ease;
 }
 
+.inputBox::placeholder {
+    font-size: 0.8em;
+    opacity: 0.5;
+}
+
 .inputBox:focus {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
 }
