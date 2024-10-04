@@ -5,7 +5,6 @@ function add(numbers: string): number {
         const parsedNum = parseFloat(num.trim());
         return isNaN(parsedNum) ? 0 : parsedNum;
     });
-    console.log('numArray: ', numArray)
     return numArray
         .reduce((sum, n) => sum + n, 0);
 }
