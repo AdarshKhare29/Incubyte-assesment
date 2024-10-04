@@ -1,3 +1,11 @@
+.calculatorWrapper {
+    background-color: lightblue;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
 .calculatorContainer {
     display: flex;
     flex-direction: column;
@@ -67,4 +75,11 @@
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     width: 100%;
+}
+
+.crossIcon {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    cursor: pointer;
 }

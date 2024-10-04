@@ -18,25 +18,20 @@ const StringCalculator: React.FC = () => {
         }
     };
     return (
-        <div
-            style={{
-                backgroundColor: 'lightblue',
-                height: '100vh',
-                display: 'flex',
-                alignItems: 'flex-start',
-                justifyContent: 'center',
-            }}
-        >
+        <div className="calculatorWrapper">
             <div className="calculatorContainer">
                 <div className="title">String Calculator</div>
-                <input
-                    type="text"
-                    placeholder="Enter numbers separated by commas"
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    className="inputBox"
-                    style={error ? { border: '1px solid red' } : {}}
-                />
+                <div style={{ position: 'relative' }}>
+                    <input
+                        type="text"
+                        placeholder="Enter numbers separated by commas"
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        className="inputBox"
+                        style={error ? { border: '1px solid red' } : {}}
+                    />
+                    {input && <div className="crossIcon" onClick={() => setInput('')}><img src="/close.png" width={20} height={20} alt="clear" /></div>}
+                </div>
                 <button className="calculateButton" onClick={handleCalculate}>Calculate</button>
                 {error && <p className="resultDisplay" style={{ color: 'red' }}>Error: {error}</p>}
                 {result !== null && <p className="resultDisplay">Result: {result}</p>}
